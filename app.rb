@@ -1,3 +1,4 @@
+require 'pry'
 require_relative 'config/environment'
 
 class App < Sinatra::Base
@@ -12,6 +13,7 @@ class App < Sinatra::Base
 
   post '/' do
     @puppy = Puppy.new(params[:name], params[:breed], params[:age])
+    binding.pry
 
     erb = :display_puppy
   end
